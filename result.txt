@@ -1,0 +1,3 @@
+highest: charlie (92)
+lowest: bob(67)
+average:  81.2
