@@ -134,3 +134,54 @@ def prime_number(n):
     return primes
 
 print(prime_number(10))
+
+#fibonacci sequence
+
+def fibonacci(n):
+    seq = [0,1]
+    for i in range(2,n):
+        seq.append(seq[-1] + seq[-2])
+    return seq[:n]
+
+print(fibonacci(7))
+
+#find all pairs in a list that sum to target
+
+def pair_sum(nums,target):
+    seen = set()
+    pairs = []
+    for num in nums:
+        diff = target-num
+        if diff in seen:
+            pairs.append((num,diff))
+        seen.add(num)
+    return pairs
+
+print(pair_sum([2,4,3,5,7,8,9],7))
+
+
+#find duplicate elements in a list
+
+def find_duplicate(lst):
+    seen,dup = set(),[]
+    for item in lst:
+        if item in seen and item not in dup:
+            dup.append(item)
+        seen.add(item)
+    return dup
+
+print(find_duplicate([1,2,3,2,4,5,1]))
+
+#find first non-repeating charcater in a string
+
+def first_non_repeating(s):
+    freq = {}
+    for ch in s:
+        freq[ch] = freq.get(ch,0) + 1
+    for ch in s:
+        if freq[ch] == 1:
+            return ch
+    return None
+
+print(first_non_repeating("swiss"))
+
