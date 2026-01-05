@@ -194,4 +194,4 @@ def rotate_list(nums,k):
     k = k % len(nums)
     return nums[-k:] + nums[:-k]
 
-print(rotate_list([2,3,4,5],3))
+print(rotate_list([2,3,4,5],2))

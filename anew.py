@@ -265,3 +265,19 @@ def find_pair_bruteforce(num,target):
     return pairs
 
 print(find_pair_bruteforce([1,2,3,4,5],6))
+
+#- Implement a function to generate all permutations of a string.
+
+def permute(s, step=0):
+    if step == len(s):
+        print("".join(s))   # base case: one permutation
+    else:
+        for i in range(step, len(s)):
+            # swap current index with step
+            s_copy = [c for c in s]
+            s_copy[step], s_copy[i] = s_copy[i], s_copy[step]
+            # recurse on next step
+            permute(s_copy, step+1)
+
+# Example
+permute(list("abc"))
